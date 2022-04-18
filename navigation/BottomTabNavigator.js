@@ -6,7 +6,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { useColorScheme } from "react-native";
 
 import Colors from "../constants/Colors";
-import TabOneScreen from "../screens/TabOneScreen";
+import { TabOneScreen } from "../screens/TabOneScreen";
 import TabTwoScreen from "../screens/TabTwoScreen";
 
 const BottomTab = createBottomTabNavigator();
@@ -16,11 +16,11 @@ export default function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="TabOne"
+      initialRouteName="ScreenBlurTest"
       screenOptions={{ tabBarActiveTintColor: Colors[colorScheme].tint }}
     >
       <BottomTab.Screen
-        name="TabOne"
+        name="ScreenBlurTest"
         component={TabOneNavigator}
         options={{
           tabBarIcon: ({ color }) => (
@@ -57,7 +57,7 @@ function TabOneNavigator() {
       <TabOneStack.Screen
         name="TabOneScreen"
         component={TabOneScreen}
-        options={{ headerTitle: "Tab One Title" }}
+        options={{ headerTitle: "Tab One Title", headerShown: false }}
       />
     </TabOneStack.Navigator>
   );
